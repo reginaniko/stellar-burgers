@@ -3,7 +3,7 @@ describe('Тесты e2e: главная страница и модальное 
     beforeEach(() => {
       cy.intercept('GET', '/api/ingredients', { fixture: 'ingredients.json' });
       cy.intercept('GET', '/api/auth/user', { fixture: 'user.json' });
-      cy.visit('http://localhost:4000');
+      cy.visit('/');
     });
   
     afterEach(() => {
@@ -65,7 +65,7 @@ describe('Тесты e2e: главная страница и модальное 
       cy.intercept('POST', '/api/auth/login', { fixture: 'user.json' });
       cy.intercept('GET', '/api/auth/user', { fixture: 'user.json' });
       cy.intercept('POST', '/api/orders', { fixture: 'order.json' });
-      cy.visit('http://localhost:4000');
+      cy.visit('/');
       cy.setCookie('accessToken', 'accessToken');
       window.localStorage.setItem('refreshToken', 'refreshToken');
     });
