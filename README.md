@@ -68,10 +68,10 @@ The app is a **space-themed burger builder** that allows users to:
 
 ## Scripts
 
-- npm start          # Run development server
-- npm run build      # Generate production build (dist/)
-- npm test           # Run Jest unit tests
-- npm run cypress:open  # Launch Cypress UI
+- npm start - Run development server
+- npm run build - Generate production build (dist/)
+- npm test - Run Jest unit tests
+- npm run cypress - open Launch Cypress UI
 
 
 ## Deployment
