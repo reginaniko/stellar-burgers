@@ -49,13 +49,24 @@ The app is a **space-themed burger builder** that allows users to:
 
 ## Project Structure
 stellar-burgers/
-├── src/                  # Application source code
-├── public/               # Static assets
-├── dist/                 # Production build output (auto-generated)
-├── .github/workflows/    # CI/CD pipeline
-├── .env.example          # API URL template
-├── package.json          # Scripts, dependencies, homepage
-└── README.md             # This file
+├── .github/
+│   └── workflows/
+│       └── pages-deploy.yml          # GitHub Actions CI/CD pipeline
+├── public/                           # Static assets (favicon, index.html template)
+├── src/
+│   ├── components/                   # Reusable UI components
+│   ├── pages/                        # Page-level components
+│   ├── services/                     # API calls and Redux logic
+│   ├── utils/                        # Helper functions (burger-api.ts)
+│   ├── app/                          # Redux store and routing
+│   └── index.tsx                     # Entry point
+├── dist/                             # Production build output (auto-generated)
+├── .env.example                      # Environment variable template
+├── .gitignore
+├── package.json                      # Dependencies, scripts, homepage
+├── tsconfig.json
+├── webpack.config.js                 # Build configuration
+└── README.md                         # This file
 
 
 ---
