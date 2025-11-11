@@ -15,7 +15,7 @@ The app is a **space-themed burger builder** that allows users to:
 - Place orders with real-time processing
 - Navigate via client-side routing
 
-> **Purpose:** Serves as a **stable, publicly accessible test environment** for **end-to-end automation testing** (Cypress, Playwright, etc.).
+> **Purpose:** Serves as a **stable, publicly accessible test environment** for **end-to-end automation testing** (Selenium/Java).
 
 ---
 
