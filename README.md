@@ -50,46 +50,45 @@ The app is a **space-themed burger builder** that allows users to:
 ## Project Structure
 stellar-burgers/
 ├── .github/
-│   └── workflows/
-│       └── pages-deploy.yml          # GitHub Actions CI/CD pipeline
-├── public/                           # Static assets (favicon, index.html template)
+│ └── workflows/
+│ └── pages-deploy.yml # GitHub Actions CI/CD pipeline
+├── public/ # Static assets (favicon, index.html template)
 ├── src/
-│   ├── components/                   # Reusable UI components
-│   ├── pages/                        # Page-level components
-│   ├── services/                     # API calls and Redux logic
-│   ├── utils/                        # Helper functions (burger-api.ts)
-│   ├── app/                          # Redux store and routing
-│   └── index.tsx                     # Entry point
-├── dist/                             # Production build output (auto-generated)
-├── .env.example                      # Environment variable template
+│ ├── components/ # Reusable UI components
+│ ├── pages/ # Page-level components
+│ ├── services/ # API calls and Redux logic
+│ ├── utils/ # Helper functions (burger-api.ts)
+│ ├── app/ # Redux store and routing
+│ └── index.tsx # Entry point
+├── dist/ # Production build output (auto-generated)
+├── .env.example # Environment variable template
 ├── .gitignore
-├── package.json                      # Dependencies, scripts, homepage
+├── package.json # Dependencies, scripts, homepage
 ├── tsconfig.json
-├── webpack.config.js                 # Build configuration
-└── README.md                         # This file
-
+├── webpack.config.js # Build configuration
+└── README.md # This file
 
 ---
 
 ## Scripts
 
-npm start          # Run development server
-npm run build      # Generate production build (dist/)
-npm test           # Run Jest unit tests
-npm run cypress:open  # Launch Cypress UI
+- npm start          # Run development server
+- npm run build      # Generate production build (dist/)
+- npm test           # Run Jest unit tests
+- npm run cypress:open  # Launch Cypress UI
 
 ---
 
 ## Deployment
 
-Trigger: Push to main branch
-Pipeline: GitHub Actions → npm ci → npm run build → deploy dist/
-URL:https://reginaniko.github.io/stellar-burgers/
-Uptime: 100% (GitHub-hosted, no maintenance required)
+- Trigger: Push to main branch
+- Pipeline: GitHub Actions → npm ci → npm run build → deploy dist/
+- URL:https://reginaniko.github.io/stellar-burgers/
+- Uptime: 100% (GitHub-hosted, no maintenance required)
 
 ## Status
-CI/CD Pipeline (link) 
-Auto-deployed on every commit
+- CI/CD Pipeline (link) 
+- Auto-deployed on every commit
 
-## Maintained by Regina Niko
-Automation Tester | E2E Testing | CI/CD 
+### Maintained by Regina Nikogosian
+### Automation Tester | E2E Testing | CI/CD 
