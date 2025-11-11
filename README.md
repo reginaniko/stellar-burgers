@@ -15,9 +15,8 @@ The app is a **space-themed burger builder** that allows users to:
 - Place orders with real-time processing
 - Navigate via client-side routing
 
-> **Purpose:** Serves as a **stable, publicly accessible test environment** for **end-to-end automation testing** (Selenium/Java).
+> **Purpose:** Serves as a **stable, publicly accessible test environment** for **end-to-end automation testing project** (Selenium/Java).
 
----
 
 ## What I Implemented
 
@@ -30,7 +29,6 @@ The app is a **space-themed burger builder** that allows users to:
 | **Client-Side Routing Fix** | Added `"homepage"` field in `package.json` to prevent 404s on refresh |
 | **Build Verification** | Validated `npm run build` produces working static assets |
 
----
 
 ## Tech Stack
 
@@ -45,10 +43,9 @@ The app is a **space-themed burger builder** that allows users to:
 | **Environment** | `.env` + GitHub Secrets |
 | **Testing Framework** | Cypress |
 
----
 
 ## Project Structure
-stellar-burgers/
+```stellar-burgers/
 ├── .github/
 │ └── workflows/
 │ └── pages-deploy.yml # GitHub Actions CI/CD pipeline
@@ -67,8 +64,7 @@ stellar-burgers/
 ├── tsconfig.json
 ├── webpack.config.js # Build configuration
 └── README.md # This file
-
----
+```
 
 ## Scripts
 
@@ -77,7 +73,6 @@ stellar-burgers/
 - npm test           # Run Jest unit tests
 - npm run cypress:open  # Launch Cypress UI
 
----
 
 ## Deployment
 
@@ -87,8 +82,9 @@ stellar-burgers/
 - Uptime: 100% (GitHub-hosted, no maintenance required)
 
 ## Status
-- CI/CD Pipeline (link) 
-- Auto-deployed on every commit
+CI/CD Pipeline (link)    
+Auto-deployed on every commit   
 
-### Maintained by Regina Nikogosian
-### Automation Tester | E2E Testing | CI/CD 
+---
+### Maintained by Regina Nikogosian        
+Automation Tester | E2E Testing | CI/CD 
