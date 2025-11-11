@@ -1,19 +1,84 @@
-# Проектная работа 11-го спринта
+# Stellar Burgers – Production-Deployed Test Environment
 
-[Макет](<https://www.figma.com/file/vIywAvqfkOIRWGOkfOnReY/React-Fullstack_-Проектные-задачи-(3-месяца)_external_link?type=design&node-id=0-1&mode=design>)
+**Live Site:** https://reginaniko.github.io/stellar-burgers/  
+**Repository:** https://github.com/reginaniko/stellar-burgers  
 
-[Чеклист](https://www.notion.so/praktikum/0527c10b723d4873aa75686bad54b32e?pvs=4)
+---
 
-## Этапы работы:
+## Project Description
 
-1. Разверните проект и ознакомьтесь с кодом. Все необходимые вам компоненты уже созданы и лежат в папке `src/components`
+This is a **fully deployed, production-ready React web application** hosted on **GitHub Pages** with **automated CI/CD** via **GitHub Actions**.  
 
-2. Настройте роутинг.
+The app is a **space-themed burger builder** that allows users to:
+- View ingredients fetched from a live API
+- Drag and drop items into a constructor
+- Place orders with real-time processing
+- Navigate via client-side routing
 
-3. Напишите функционал запросов данных с сервера, используя `Redux` и глобальный `store`. Сами "ручки" уже прописаны и лежат в `utils/burger-api.ts`
+> **Purpose:** Serves as a **stable, publicly accessible test environment** for **end-to-end automation testing** (Cypress, Playwright, etc.).
 
-4. Настройте авторизацию и создайте защищённые роуты.
+---
 
-## Важно:
+## What I Implemented
 
-Для корректной работы запросов к серверу необходимо добавить переменную BURGER_API_URL в окружение. Сама ссылка находится в файле `.env.example`.
+| Feature | Implementation |
+|-------|----------------|
+| **Live Deployment** | Configured GitHub Pages to serve the built app at a public URL |
+| **Automated CI/CD Pipeline** | Created `.github/workflows/pages-deploy.yml` to auto-build and deploy on every push |
+| **Production Build Output** | Ensured Webpack outputs static files to `dist/` folder |
+| **Environment Configuration** | Set `BURGER_API_URL` via GitHub Secrets for secure API access |
+| **Client-Side Routing Fix** | Added `"homepage"` field in `package.json` to prevent 404s on refresh |
+| **Build Verification** | Validated `npm run build` produces working static assets |
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|------|------------|
+| **Frontend** | React 18, Redux Toolkit, React Router v6 |
+| **Build Tool** | Webpack 5, Babel, TypeScript |
+| **UI Components** | `@zlden/react-developer-burger-ui-components` |
+| **API** | `https://norma.nomoreparties.space` (public backend) |
+| **Hosting** | GitHub Pages (free, HTTPS) |
+| **CI/CD** | GitHub Actions |
+| **Environment** | `.env` + GitHub Secrets |
+| **Testing Framework** | Cypress |
+
+---
+
+## Project Structure
+stellar-burgers/
+├── src/                  # Application source code
+├── public/               # Static assets
+├── dist/                 # Production build output (auto-generated)
+├── .github/workflows/    # CI/CD pipeline
+├── .env.example          # API URL template
+├── package.json          # Scripts, dependencies, homepage
+└── README.md             # This file
+
+
+---
+
+## Scripts
+
+npm start          # Run development server
+npm run build      # Generate production build (dist/)
+npm test           # Run Jest unit tests
+npm run cypress:open  # Launch Cypress UI
+
+---
+
+## Deployment
+
+Trigger: Push to main branch
+Pipeline: GitHub Actions → npm ci → npm run build → deploy dist/
+URL:https://reginaniko.github.io/stellar-burgers/
+Uptime: 100% (GitHub-hosted, no maintenance required)
+
+## Status
+CI/CD Pipeline (link) 
+Auto-deployed on every commit
+
+## Maintained by Regina Niko
+Automation Tester | E2E Testing | CI/CD 
