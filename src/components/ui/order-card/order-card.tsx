@@ -9,6 +9,7 @@ import styles from './order-card.module.css';
 
 import { OrderCardUIProps } from './type';
 import { OrderStatus } from '@components';
+import { translateOrderName } from '../../../utils/order-name-translation';
 
 export const OrderCardUI: FC<OrderCardUIProps> = memo(
   ({ orderInfo, maxIngredients, locationState }) => (
@@ -23,11 +24,18 @@ export const OrderCardUI: FC<OrderCardUIProps> = memo(
           #{String(orderInfo.number).padStart(6, '0')}
         </span>
         <span className='text text_type_main-default text_color_inactive'>
-          <FormattedDate date={orderInfo.date} />
+          {new Date(orderInfo.date).toLocaleString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric',
+            hour: 'numeric',
+            minute: '2-digit',
+            hour12: true
+          })}
         </span>
       </div>
       <h4 className={`pt-6 text text_type_main-medium ${styles.order_name}`}>
-        {orderInfo.name}
+        {translateOrderName(orderInfo.name)}
       </h4>
       {location.pathname === '/profile/orders' && (
         <OrderStatus status={orderInfo.status} />

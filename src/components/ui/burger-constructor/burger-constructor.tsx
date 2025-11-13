@@ -24,7 +24,7 @@ export const BurgerConstructorUI: FC<BurgerConstructorUIProps> = ({
         <ConstructorElement
           type='top'
           isLocked
-          text={`${constructorItems.bun.name} (верх)`}
+          text={`${constructorItems.bun.name} (top)`}
           price={constructorItems.bun.price}
           thumbnail={constructorItems.bun.image}
         />
@@ -61,7 +61,7 @@ export const BurgerConstructorUI: FC<BurgerConstructorUIProps> = ({
         <ConstructorElement
           type='bottom'
           isLocked
-          text={`${constructorItems.bun.name} (низ)`}
+          text={`${constructorItems.bun.name} (bottom)`}
           price={constructorItems.bun.price}
           thumbnail={constructorItems.bun.image}
         />
@@ -82,13 +82,13 @@ export const BurgerConstructorUI: FC<BurgerConstructorUIProps> = ({
         htmlType='button'
         type='primary'
         size='large'
-        children='Оформить заказ'
+        children='Place Order'
         onClick={onOrderClick}
       />
     </div>
 
     {orderRequest && (
-      <Modal onClose={closeOrderModal} title={'Оформляем заказ...'}>
+      <Modal onClose={closeOrderModal} title={'Processing order...'}>
         <Preloader />
       </Modal>
     )}
@@ -96,7 +96,7 @@ export const BurgerConstructorUI: FC<BurgerConstructorUIProps> = ({
     {orderModalData && (
       <Modal
         onClose={closeOrderModal}
-        title={orderRequest ? 'Оформляем заказ...' : ''}
+        title={orderRequest ? 'Processing order...' : ''}
       >
         <OrderDetailsUI orderNumber={orderModalData.number} />
       </Modal>
