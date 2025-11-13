@@ -27,7 +27,7 @@ export const ProfileUI: FC<ProfileUIProps> = ({
         <div className='pb-6'>
           <Input
             type={'text'}
-            placeholder={'Имя'}
+            placeholder={'Name'}
             onChange={handleInputChange}
             value={formValue.name}
             name={'name'}
@@ -40,7 +40,7 @@ export const ProfileUI: FC<ProfileUIProps> = ({
         <div className='pb-6'>
           <Input
             type={'email'}
-            placeholder={'E-mail'}
+            placeholder={'Email'}
             onChange={handleInputChange}
             value={formValue.email}
             name={'email'}
@@ -53,7 +53,7 @@ export const ProfileUI: FC<ProfileUIProps> = ({
         <div className='pb-6'>
           <Input
             type={'password'}
-            placeholder={'Пароль'}
+            placeholder={'Password'}
             onChange={handleInputChange}
             value={formValue.password}
             name={'password'}
@@ -71,10 +71,10 @@ export const ProfileUI: FC<ProfileUIProps> = ({
               size='medium'
               onClick={handleCancel}
             >
-              Отменить
+              Cancel
             </Button>
             <Button type='primary' size='medium' htmlType='submit'>
-              Сохранить
+              Save
             </Button>
           </div>
         )}

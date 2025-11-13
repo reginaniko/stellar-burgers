@@ -20,7 +20,7 @@ export const RegisterUI: FC<RegisterUIProps> = ({
 }) => (
   <main className={styles.container}>
     <div className={`pt-6 ${styles.wrapCenter}`}>
-      <h3 className='pb-6 text text_type_main-medium'>Регистрация</h3>
+      <h3 className='pb-6 text text_type_main-medium'>Sign Up</h3>
       <form
         className={`pb-15 ${styles.form}`}
         name='register'
@@ -30,7 +30,7 @@ export const RegisterUI: FC<RegisterUIProps> = ({
           <div className='pb-6'>
             <Input
               type='text'
-              placeholder='Имя'
+              placeholder='Name'
               onChange={(e) => setUserName(e.target.value)}
               value={userName}
               name='name'
@@ -42,7 +42,7 @@ export const RegisterUI: FC<RegisterUIProps> = ({
           <div className='pb-6'>
             <Input
               type='email'
-              placeholder='E-mail'
+              placeholder='Email'
               onChange={(e) => setEmail(e.target.value)}
               value={email}
               name={'email'}
@@ -53,6 +53,7 @@ export const RegisterUI: FC<RegisterUIProps> = ({
           </div>
           <div className='pb-6'>
             <PasswordInput
+              placeholder='Password'
               onChange={(e) => setPassword(e.target.value)}
               value={password}
               name='password'
@@ -60,7 +61,7 @@ export const RegisterUI: FC<RegisterUIProps> = ({
           </div>
           <div className={`pb-6 ${styles.button}`}>
             <Button type='primary' size='medium' htmlType='submit'>
-              Зарегистрироваться
+              Create Account
             </Button>
           </div>
           {errorText && (
@@ -71,9 +72,9 @@ export const RegisterUI: FC<RegisterUIProps> = ({
         </>
       </form>
       <div className={`${styles.question} text text_type_main-default pb-6`}>
-        Уже зарегистрированы?
+        Already have an account?
         <Link to='/login' className={`pl-2 ${styles.link}`}>
-          Войти
+          Log In
         </Link>
       </div>
     </div>

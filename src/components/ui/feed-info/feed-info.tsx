@@ -11,15 +11,11 @@ export const FeedInfoUI: FC<FeedInfoUIProps> = memo(
     return (
       <section>
         <div className={styles.columns}>
-          <HalfColumn
-            orders={readyOrders}
-            title={'Готовы'}
-            textColor={'blue'}
-          />
-          <HalfColumn orders={pendingOrders} title={'В работе'} />
+          <HalfColumn orders={readyOrders} title={'Ready'} textColor={'blue'} />
+          <HalfColumn orders={pendingOrders} title={'In Progress'} />
         </div>
-        <Column title={'Выполнено за все время'} content={total} />
-        <Column title={'Выполнено за сегодня'} content={totalToday} />
+        <Column title={'Total orders completed'} content={total} />
+        <Column title={'Completed today'} content={totalToday} />
       </section>
     );
   }
