@@ -17,14 +17,14 @@ export const AppHeaderUI: FC<TAppHeaderUIProps> = ({ userName }) => (
           <Link to='/' className={styles.link}>
             <BurgerIcon type={'primary'} />
             <p className='text text_type_main-default ml-2 mr-10'>
-              Конструктор
+              Constructor
             </p>
           </Link>
         </>
         <>
           <Link to='/feed' className={styles.link}>
             <ListIcon type={'primary'} />
-            <p className='text text_type_main-default ml-2'>Лента заказов</p>
+            <p className='text text_type_main-default ml-2'>Order Queue</p>
           </Link>
         </>
       </div>
@@ -37,7 +37,7 @@ export const AppHeaderUI: FC<TAppHeaderUIProps> = ({ userName }) => (
         <Link to='/profile' className={styles.link}>
           <ProfileIcon type={'primary'} />
           <p className='text text_type_main-default ml-2'>
-            {userName || 'Личный кабинет'}
+            {userName || 'User Profile'}
           </p>
         </Link>
       </div>

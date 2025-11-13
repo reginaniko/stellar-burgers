@@ -1,10 +1,20 @@
 import { getIngredientsApi } from '../../utils/burger-api';
+import { INGREDIENT_NAME_EN } from '../../utils/ingredient-translation';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { TIngredient } from '@utils-types';
 
 export const getIngredientsList = createAsyncThunk(
   'ingredients/getIngredients',
-  getIngredientsApi
+  async () => {
+    const ingredients = await getIngredientsApi();
+
+    const translated = ingredients.map((ing: TIngredient) => ({
+      ...ing,
+      name: INGREDIENT_NAME_EN[ing.name] ?? ing.name
+    }));
+
+    return translated;
+  }
 );
 
 type TIngredientsState = {

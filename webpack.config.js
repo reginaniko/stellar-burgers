@@ -55,10 +55,10 @@ module.exports = {
       template: './public/index.html'
     }),
     new Dotenv({
-      path: './.env',                    
-      safe: true,                        
-      systemvars: true,                  
-      defaults: './.env.example'         
+      path: './.env',
+      safe: true,
+      systemvars: true,
+      defaults: './.env.example'
     })
   ],
   resolve: {
