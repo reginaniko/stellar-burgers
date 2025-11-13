@@ -3,6 +3,18 @@ import { TIngredient, TOrder, TUser } from './types';
 
 const URL = process.env.BURGER_API_URL;
 
+const getAccessToken = (): string | null => {
+  const raw = getCookie('accessToken');
+  if (!raw) return null;
+  return raw.startsWith('Bearer ') ? raw : `Bearer ${raw}`;
+};
+
+const withAuthHeader = (headers: HeadersInit = {}): HeadersInit => {
+  const token = getAccessToken();
+  if (!token) return headers;
+  return { ...(headers as Record<string, string>), authorization: token };
+};
+
 const checkResponse = <T>(res: Response): Promise<T> =>
   res.ok ? res.json() : res.json().then((err) => Promise.reject(err));
 
@@ -90,10 +102,9 @@ export const getFeedsApi = () =>
 export const getOrdersApi = () =>
   fetchWithRefresh<TFeedsResponse>(`${URL}/orders`, {
     method: 'GET',
-    headers: {
-      'Content-Type': 'application/json;charset=utf-8',
-      authorization: getCookie('accessToken')
-    } as HeadersInit
+    headers: withAuthHeader({
+      'Content-Type': 'application/json;charset=utf-8'
+    })
   }).then((data) => {
     if (data?.success) return data.orders;
     return Promise.reject(data);
@@ -107,10 +118,9 @@ type TNewOrderResponse = TServerResponse<{
 export const orderBurgerApi = (data: string[]) =>
   fetchWithRefresh<TNewOrderResponse>(`${URL}/orders`, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json;charset=utf-8',
-      authorization: getCookie('accessToken')
-    } as HeadersInit,
+    headers: withAuthHeader({
+      'Content-Type': 'application/json;charset=utf-8'
+    }),
     body: JSON.stringify({
       ingredients: data
     })
@@ -214,20 +224,22 @@ export const resetPasswordApi = (data: { password: string; token: string }) =>
 
 type TUserResponse = TServerResponse<{ user: TUser }>;
 
-export const getUserApi = () =>
-  fetchWithRefresh<TUserResponse>(`${URL}/auth/user`, {
-    headers: {
-      authorization: getCookie('accessToken')
-    } as HeadersInit
+export const getUserApi = () => {
+  const token = getAccessToken();
+  if (!token)
+    return Promise.reject({ success: false, message: 'No auth token' });
+
+  return fetchWithRefresh<TUserResponse>(`${URL}/auth/user`, {
+    headers: withAuthHeader()
   });
+};
 
 export const updateUserApi = (user: Partial<TRegisterData>) =>
   fetchWithRefresh<TUserResponse>(`${URL}/auth/user`, {
     method: 'PATCH',
-    headers: {
-      'Content-Type': 'application/json;charset=utf-8',
-      authorization: getCookie('accessToken')
-    } as HeadersInit,
+    headers: withAuthHeader({
+      'Content-Type': 'application/json;charset=utf-8'
+    }),
     body: JSON.stringify(user)
   });
 
