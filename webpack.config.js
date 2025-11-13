@@ -38,7 +38,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(jpg|jpeg|png|svg)$/,
+        test: /\.(jpg|jpeg|png|svg|ico)$/,
         type: 'asset/resource'
       },
       {
@@ -52,7 +52,8 @@ module.exports = {
       extensions: ['.js', '.jsx', '.ts', '.tsx']
     }),
     new HtmlWebpackPlugin({
-      template: './public/index.html'
+      template: './public/index.html',
+      favicon: './public/favicon.ico'
     }),
     new Dotenv({
       path: './.env',
@@ -63,7 +64,7 @@ module.exports = {
   ],
   resolve: {
     extensions: [
-      '*',
+      '.*',
       '.js',
       '.jsx',
       '.ts',
