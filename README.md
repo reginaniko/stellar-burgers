@@ -18,6 +18,10 @@ The app is a **space-themed burger builder** that allows users to:
 
 > **Purpose:** Serves as a **stable, publicly accessible test environment** for **end-to-end automation testing project** (Selenium/Java).
 
+[![Jest Tests & Reports](https://github.com/reginaniko/stellar-burgers/actions/workflows/jest-report.yml/badge.svg)](https://github.com/reginaniko/stellar-burgers/actions/workflows/jest-report.yml)
+![Coverage](https://img.shields.io/badge/coverage-~83%25-brightgreen)
+
+
 ## What I Implemented
 
 | Feature                       | Implementation                                                                      |
@@ -83,6 +87,12 @@ The app is a **space-themed burger builder** that allows users to:
 
 CI/CD Pipeline (link)  
 Auto-deployed on every commit
+
+## Test Automation & Reports
+
+- Jest unit tests for Redux slices and core logic
+- GitHub Actions workflow **“Jest Tests & Reports”** runs on every push and PR
+- HTML coverage report and JUnit test report are uploaded as CI artifacts
 
 ---
 

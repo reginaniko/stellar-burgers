@@ -10,8 +10,8 @@ import {
   resetOrder
 } from './newOrder';
 
-describe('Тесты Оrder', () => {
-  test('Тесты селекторов getOrderRequest, getOrderModalData', () => {
+describe('Tests: Order', () => {
+  test('Selector tests: getOrderRequest, getOrderModalData', () => {
     const store = configureStore({
       reducer: {
         newOrder: newOrderSlice.reducer
@@ -27,7 +27,7 @@ describe('Тесты Оrder', () => {
     expect(modal).toEqual(orderMockData.orderModalData);
   });
 
-  test('Тесты редьюсера resetOrder', () => {
+  test('resetOrder reducer test', () => {
     const state = {
       orderRequest: true,
       orderModalData: orderReceivedMockData.order,
@@ -37,7 +37,7 @@ describe('Тесты Оrder', () => {
     expect(stateReceived).toEqual(initialState);
   });
 
-  test('Тесты редьюсера placeNewOrder, проверка fulfilled', () => {
+  test('Reducer test: placeNewOrder, fulfilled check', () => {
     const newState = newOrderSlice.reducer(
       initialState,
       placeNewOrder.fulfilled(orderReceivedMockData, '', [''])
@@ -46,15 +46,15 @@ describe('Тесты Оrder', () => {
     expect(newState.orderModalData).toEqual(orderReceivedMockData.order);
   });
 
-  test('Тесты редьюсера placeNewOrder, проверка rejected', () => {
+  test('Reducer test: placeNewOrder, rejected check', () => {
     const newState = newOrderSlice.reducer(
       initialState,
-      placeNewOrder.rejected(new Error('error'), 'ошибка теста', [''])
+      placeNewOrder.rejected(new Error('error'), 'test error', [''])
     );
     expect(newState.error).toEqual('error');
   });
 
-  test('Тесты редьюсера placeNewOrder, проверка pending', () => {
+  test('Reducer test: placeNewOrder, pending check', () => {
     const newState = newOrderSlice.reducer(
       initialState,
       placeNewOrder.pending('', [])

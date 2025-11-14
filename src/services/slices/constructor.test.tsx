@@ -36,8 +36,8 @@ function deleteIdFromTheArray(array: TConstructorIngredient[]) {
   return ingredientsWithoutId;
 }
 
-describe('Тесты constructorSlice', () => {
-  test('Добавить ингредиент: не булка', () => {
+describe('ConstructorSlice Tests', () => {
+  test('Add ingredient: not bun', () => {
     const newState = constructorSlice.reducer(
       initialState,
       addItem(singleNonBunIngredientWId)
@@ -50,7 +50,7 @@ describe('Тесты constructorSlice', () => {
     expect(null).toEqual(bun);
     expect([singleNonBunIngredientWOId]).toEqual(ingredientsWithoutId);
   });
-  test('Добавить ингредиент: булка', () => {
+  test('Add ingredient: bun', () => {
     const newState = constructorSlice.reducer(
       initialState,
       addItem(singleBunIngredientWId)
@@ -66,7 +66,7 @@ describe('Тесты constructorSlice', () => {
     expect(singleBunIngredientWOId).toEqual(bunWithoutId);
     expect(ingredients).toEqual([]);
   });
-  test('Удалить ингредиент', () => {
+  test('Remove ingredient', () => {
     const initialStateFromConstants: TConstructorState = {
       bun: null,
       ingredients: allNonBunIngredientsWId
@@ -83,7 +83,7 @@ describe('Тесты constructorSlice', () => {
     expect(allIngredientsWithDeletedIngredient).toEqual(ingredientsWithoutId);
   });
 
-  test('Очистить ингредиенты', () => {
+  test('Clear ingredients', () => {
     const initialStateFromConstants: TConstructorState = {
       bun: singleBunIngredientWId,
       ingredients: allNonBunIngredientsWId
@@ -98,7 +98,7 @@ describe('Тесты constructorSlice', () => {
     expect(ingredients).toEqual([]);
     expect(bun).toEqual(null);
   });
-  test('Обновить список ингредиентов', () => {
+  test('Refresh ingredient list', () => {
     const initialStateFromConstants: TConstructorState = {
       bun: singleBunIngredientWId,
       ingredients: allNonBunIngredientsWId
@@ -114,7 +114,7 @@ describe('Тесты constructorSlice', () => {
 
     expect(ingredientsWithoutId).toEqual(orderedIngredientsWOId);
   });
-  test('Переместить ингредиент вниз', () => {
+  test('Move ingredient below', () => {
     const initialStateFromConstants: TConstructorState = {
       bun: singleBunIngredientWId,
       ingredients: allNonBunIngredientsWId
@@ -130,7 +130,7 @@ describe('Тесты constructorSlice', () => {
 
     expect(ingredientsWithoutId).toEqual(allNonBunIngredientsWOIdSwap1to2);
   });
-  test('Переместить ингредиент вверх', () => {
+  test('Move ingredient up', () => {
     const initialStateFromConstants: TConstructorState = {
       bun: singleBunIngredientWId,
       ingredients: allNonBunIngredientsWId
@@ -147,7 +147,7 @@ describe('Тесты constructorSlice', () => {
     expect(ingredientsWithoutId).toEqual(allNonBunIngredientsWOIdSwap1to0);
   });
 
-  test('Селектор selectItems возвращает состояние', () => {
+  test('SelectItems selector returns state', () => {
     const newState = {
       constructorIngredient: {
         bun: singleBunIngredientWId,

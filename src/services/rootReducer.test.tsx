@@ -2,8 +2,8 @@ import { expect, test } from '@jest/globals';
 import { configureStore } from '@reduxjs/toolkit';
 import { rootReducer } from './rootReducer';
 
-describe('Тесты инициализации rootReducer', () => {
-  test('Проверка инициализации rootReducer', () => {
+describe('Initialization tests: rootReducer', () => {
+  test('Initialization check: rootReducer', () => {
     const store = configureStore({
       reducer: rootReducer
     });

@@ -8,8 +8,8 @@ import {
   getUserOrders
 } from './userOrders';
 
-describe('Тесты Оrders', () => {
-  test('Тест селектора  listOfOrders, ', () => {
+describe('Tests: Оrders', () => {
+  test('Test selector: listOfOrders, ', () => {
     const store = configureStore({
       reducer: {
         orders: userOrdersSlice.reducer
@@ -23,7 +23,7 @@ describe('Тесты Оrders', () => {
     expect(orderRequest).toEqual(ordersMockData.orders);
   });
 
-  test('Тесты редьюсера getUserOrders, проверка fulfilled', () => {
+  test('Reducer test: getUserOrders, fulfilled check', () => {
     const newState = userOrdersSlice.reducer(
       initialState,
       getUserOrders.fulfilled(ordersMockData.orders, '')
@@ -32,15 +32,15 @@ describe('Тесты Оrders', () => {
     expect(newState.isLoading).toEqual(false);
   });
 
-  test('Тесты редьюсера getUserOrders, проверка rejected', () => {
+  test('Reducer test: getUserOrders, rejected check', () => {
     const newState = userOrdersSlice.reducer(
       initialState,
-      getUserOrders.rejected(new Error('error'), 'ошибка теста')
+      getUserOrders.rejected(new Error('error'), 'test error')
     );
     expect(newState.isLoading).toEqual(false);
   });
 
-  test('Тесты редьюсера getUserOrders, проверка pending', () => {
+  test('Reducer test: getUserOrders, pending check', () => {
     const newState = userOrdersSlice.reducer(
       initialState,
       getUserOrders.pending('')
