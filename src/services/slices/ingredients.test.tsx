@@ -11,8 +11,8 @@ import {
 import { ingredientsMockData } from './testData';
 import { configureStore } from '@reduxjs/toolkit';
 
-describe('Тесты ingredientsSlice', () => {
-  test('Тесты селекторов getIngredientsState, getIngredientsLoadingState, getIngredients', () => {
+describe('ingredientsSlice tests', () => {
+  test('Tests for selectors getIngredientsState, getIngredientsLoadingState, getIngredients', () => {
     const store = configureStore({
       reducer: {
         ingredients: ingredientsSlice.reducer
@@ -29,7 +29,7 @@ describe('Тесты ingredientsSlice', () => {
     expect(ingredients).toEqual(ingredientsMockData.ingredients);
   });
 
-  test('Тесты редьюсера getIngredientsList, проверка fulfilled', () => {
+  test('getIngredientsList reducer test, fulfilled check', () => {
     const action = {
       type: getIngredientsList.fulfilled.type,
       payload: ingredientsMockData.ingredients
@@ -39,17 +39,17 @@ describe('Тесты ingredientsSlice', () => {
     expect(stateReceived.loading).toEqual(false);
   });
 
-  test('Тесты редьюсера getIngredientsList, проверка rejected', () => {
+  test('getIngredientsList reducer test, rejected check', () => {
     const stateReceived = ingredientsSlice.reducer(
       initialState,
-      getIngredientsList.rejected(new Error('error'), 'Ошибка теста')
+      getIngredientsList.rejected(new Error('error'), 'Test error')
     );
     expect(stateReceived.ingredients).toEqual([]);
     expect(stateReceived.loading).toEqual(false);
     expect(stateReceived.error).toEqual('error');
   });
 
-  test('Тесты редьюсера getIngredientsList,  проверка pending', () => {
+  test('getIngredientsList reducer test, pending check', () => {
     const stateReceived = ingredientsSlice.reducer(
       initialState,
       getIngredientsList.pending('')

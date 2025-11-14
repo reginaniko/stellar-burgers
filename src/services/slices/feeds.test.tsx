@@ -10,8 +10,8 @@ import {
 import { configureStore } from '@reduxjs/toolkit';
 import { feedsMockData } from './testData';
 
-describe('Тесты feedsSlice', () => {
-  test('Тесты селекторов  getOrdersFeeds, getTotalFeeds, getTotalTodayFeeds', () => {
+describe('FeedsSlice tests', () => {
+  test('Tests for selectors getOrdersFeeds, getTotalFeeds, getTotalTodayFeeds', () => {
     const store = configureStore({
       reducer: {
         feeds: feedsSlice.reducer
@@ -28,7 +28,7 @@ describe('Тесты feedsSlice', () => {
     expect(totalToday).toEqual(feedsMockData.totalToday);
   });
 
-  test('Тесты редьюсера getAllFeeds, проверка fulfilled', () => {
+  test('getAllFeeds reducer test, fulfilled check', () => {
     const action = {
       type: getAllFeeds.fulfilled.type,
       payload: feedsMockData
@@ -38,10 +38,10 @@ describe('Тесты feedsSlice', () => {
     expect(stateReceived.isLoading).toEqual(false);
   });
 
-  test('Тесты редьюсера getAllFeeds, проверка rejected', () => {
+  test('getAllFeeds reducer test, rejected check', () => {
     const stateReceived = feedsSlice.reducer(
       initialState,
-      getAllFeeds.rejected(new Error('error'), 'Ошибка теста')
+      getAllFeeds.rejected(new Error('error'), 'Test error')
     );
     expect(stateReceived.orders).toEqual([]);
     expect(stateReceived.total).toEqual(0);
@@ -50,7 +50,7 @@ describe('Тесты feedsSlice', () => {
     expect(stateReceived.error).toEqual('error');
   });
 
-  test('Тесты редьюсера getAllFeeds, проверка pending', () => {
+  test('getAllFeeds reducer test, pending check', () => {
     const stateReceived = feedsSlice.reducer(
       initialState,
       getAllFeeds.pending('')
