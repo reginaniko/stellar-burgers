@@ -1,64 +1,68 @@
+
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <title>Code coverage report for services/slices/testData.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
     <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style type="text/css">
-      .coverage-summary .sorter {
-        background-image: url(../../sort-arrow-sprite.png);
-      }
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
     </style>
-  </head>
-
-  <body>
-    <div class="wrapper">
-      <div class="pad1">
-        <h1>
-          <a href="../../index.html">All files</a> /
-          <a href="index.html">services/slices</a> testData.tsx
-        </h1>
-        <div class="clearfix">
-          <div class="fl pad1y space-right2">
-            <span class="strong">100% </span>
-            <span class="quiet">Statements</span>
-            <span class="fraction">547/547</span>
-          </div>
-
-          <div class="fl pad1y space-right2">
-            <span class="strong">100% </span>
-            <span class="quiet">Branches</span>
-            <span class="fraction">7/7</span>
-          </div>
-
-          <div class="fl pad1y space-right2">
-            <span class="strong">100% </span>
-            <span class="quiet">Functions</span>
-            <span class="fraction">0/0</span>
-          </div>
-
-          <div class="fl pad1y space-right2">
-            <span class="strong">100% </span>
-            <span class="quiet">Lines</span>
-            <span class="fraction">547/547</span>
-          </div>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">services/slices</a> testData.tsx</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>549/549</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>7/7</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>0/0</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>549/549</span>
+            </div>
+        
+            
         </div>
         <p class="quiet">
-          Press <em>n</em> or <em>j</em> to go to the next uncovered block,
-          <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
         <template id="filterTemplate">
-          <div class="quiet">
-            Filter:
-            <input oninput="onInput()" type="search" id="fileSearch" />
-          </div>
+            <div class="quiet">
+                Filter:
+                <input oninput="onInput()" type="search" id="fileSearch">
+            </div>
         </template>
-      </div>
-      <div class="status-line high"></div>
-      <pre><table class="coverage">
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
 <a name='L3'></a><a href='#L3'>3</a>
@@ -605,7 +609,10 @@
 <a name='L544'></a><a href='#L544'>544</a>
 <a name='L545'></a><a href='#L545'>545</a>
 <a name='L546'></a><a href='#L546'>546</a>
-<a name='L547'></a><a href='#L547'>547</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L547'></a><a href='#L547'>547</a>
+<a name='L548'></a><a href='#L548'>548</a>
+<a name='L549'></a><a href='#L549'>549</a>
+<a name='L550'></a><a href='#L550'>550</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1151,7 +1158,10 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { TConstructorIngredient } from '@utils-types';
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { TConstructorIngredient } from '@utils-types';
 import { v4 as uuidv4 } from 'uuid';
 &nbsp;
 export const allIngredientsWOId = [
@@ -1461,60 +1471,57 @@ export const allNonBunIngredientsWOIdSwap1to0 = allNonBunIngredientsWOId.map(
 ];
 &nbsp;
 export const feedsMockData = {
-    orders: [
-        {
-            _id: "66cb3152119d45001b501fb3",
-            ingredients: [
-                "643d69a5c3f7b9001cfa093d",
-                "643d69a5c3f7b9001cfa0941",
-                "643d69a5c3f7b9001cfa093e",
-                "643d69a5c3f7b9001cfa093d"
-            ],
-            status: "done",
-            name: "Флюоресцентный люминесцентный био-марсианский бургер",
-            createdAt: "2024-08-25T13:27:46.295Z",
-            updatedAt: "2024-08-25T13:27:46.787Z",
-            number: 51066
-        },
-        {
-            _id: "66cb2d57119d45001b501fa8",
-            ingredients: [
-                "643d69a5c3f7b9001cfa093c",
-                "643d69a5c3f7b9001cfa0942",
-                "643d69a5c3f7b9001cfa093f",
-                "643d69a5c3f7b9001cfa093c"
-            ],
-            status: "done",
-            name: "Краторный бессмертный spicy бургер",
-            createdAt: "2024-08-25T13:10:47.109Z",
-            updatedAt: "2024-08-25T13:10:47.605Z",
-            number: 51065
-        },
-        {
-            _id: "66cb2d2f119d45001b501fa6",
-            ingredients: [
-                "643d69a5c3f7b9001cfa093d",
-                "643d69a5c3f7b9001cfa0943",
-                "643d69a5c3f7b9001cfa093d"
-            ],
-            status: "done",
-            name: "Space флюоресцентный бургер",
-            createdAt: "2024-08-25T13:10:07.665Z",
-            updatedAt: "2024-08-25T13:10:08.189Z",
-            number: 51064
-        },
-        {
-            _id: "66cb2734119d45001b501f98",
-            ingredients: [
-                "643d69a5c3f7b9001cfa093d",
-                "643d69a5c3f7b9001cfa0943"
-            ],
-            status: "done",
-            name: "Space флюоресцентный бургер",
-            createdAt: "2024-08-25T12:44:36.184Z",
-            updatedAt: "2024-08-25T12:44:36.633Z",
-            number: 51063
-        }
+  orders: [
+    {
+      _id: '66cb3152119d45001b501fb3',
+      ingredients: [
+        '643d69a5c3f7b9001cfa093d',
+        '643d69a5c3f7b9001cfa0941',
+        '643d69a5c3f7b9001cfa093e',
+        '643d69a5c3f7b9001cfa093d'
+      ],
+      status: 'done',
+      name: 'Флюоресцентный люминесцентный био-марсианский бургер',
+      createdAt: '2024-08-25T13:27:46.295Z',
+      updatedAt: '2024-08-25T13:27:46.787Z',
+      number: 51066
+    },
+    {
+      _id: '66cb2d57119d45001b501fa8',
+      ingredients: [
+        '643d69a5c3f7b9001cfa093c',
+        '643d69a5c3f7b9001cfa0942',
+        '643d69a5c3f7b9001cfa093f',
+        '643d69a5c3f7b9001cfa093c'
+      ],
+      status: 'done',
+      name: 'Краторный бессмертный spicy бургер',
+      createdAt: '2024-08-25T13:10:47.109Z',
+      updatedAt: '2024-08-25T13:10:47.605Z',
+      number: 51065
+    },
+    {
+      _id: '66cb2d2f119d45001b501fa6',
+      ingredients: [
+        '643d69a5c3f7b9001cfa093d',
+        '643d69a5c3f7b9001cfa0943',
+        '643d69a5c3f7b9001cfa093d'
+      ],
+      status: 'done',
+      name: 'Space флюоресцентный бургер',
+      createdAt: '2024-08-25T13:10:07.665Z',
+      updatedAt: '2024-08-25T13:10:08.189Z',
+      number: 51064
+    },
+    {
+      _id: '66cb2734119d45001b501f98',
+      ingredients: ['643d69a5c3f7b9001cfa093d', '643d69a5c3f7b9001cfa0943'],
+      status: 'done',
+      name: 'Space флюоресцентный бургер',
+      createdAt: '2024-08-25T12:44:36.184Z',
+      updatedAt: '2024-08-25T12:44:36.633Z',
+      number: 51063
+    }
   ],
   total: 4,
   totalToday: 4,
@@ -1588,7 +1595,7 @@ export const orderMockData = {
     status: 'done',
     name: 'Флюоресцентный био-марсианский бургер',
     createdAt: '2024-08-25T13:37:01.496Z',
-    updatedAt: '2024-08-25T13:37:02.113Z', 
+    updatedAt: '2024-08-25T13:37:02.113Z',
     number: 51067,
     ingredients: ['643d69a5c3f7b9001cfa0941', '643d69a5c3f7b9001cfa093d']
   },
@@ -1603,7 +1610,7 @@ export const orderReceivedMockData = {
     status: 'done',
     name: 'Флюоресцентный био-марсианский бургер',
     createdAt: '2024-08-25T13:37:01.496Z',
-    updatedAt: '2024-08-25T13:37:02.113Z', 
+    updatedAt: '2024-08-25T13:37:02.113Z',
     number: 51067,
     ingredients: ['643d69a5c3f7b9001cfa0941', '643d69a5c3f7b9001cfa093d'],
     owner: ''
@@ -1616,37 +1623,42 @@ export const ordersMockData = {
       _id: '66b1e560119d45001b4fdd85',
       status: 'done',
       name: 'Экзо-плантаго флюоресцентный люминесцентный метеоритный бургер',
-      createdAt: "2024-08-06T08:57:04.948Z",
-      updatedAt: "2024-08-06T08:57:05.392Z",
+      createdAt: '2024-08-06T08:57:04.948Z',
+      updatedAt: '2024-08-06T08:57:05.392Z',
       number: 48588,
-      ingredients: [ '643d69a5c3f7b9001cfa093d', '643d69a5c3f7b9001cfa093e', '643d69a5c3f7b9001cfa0940', '643d69a5c3f7b9001cfa0949']
+      ingredients: [
+        '643d69a5c3f7b9001cfa093d',
+        '643d69a5c3f7b9001cfa093e',
+        '643d69a5c3f7b9001cfa0940',
+        '643d69a5c3f7b9001cfa0949'
+      ]
     },
     {
       _id: '66cb176e119d45001b501f79',
       ingredients: [
-        "643d69a5c3f7b9001cfa093c", 
-        "643d69a5c3f7b9001cfa0941", 
-        "643d69a5c3f7b9001cfa0946", 
-        "643d69a5c3f7b9001cfa094a", 
-        "643d69a5c3f7b9001cfa0944"
-    ],
+        '643d69a5c3f7b9001cfa093c',
+        '643d69a5c3f7b9001cfa0941',
+        '643d69a5c3f7b9001cfa0946',
+        '643d69a5c3f7b9001cfa094a',
+        '643d69a5c3f7b9001cfa0944'
+      ],
       status: 'done',
       name: 'Астероидный краторный минеральный традиционный-галактический био-марсианский бургер',
-      createdAt: "2024-08-25T11:37:18.536Z",
-      updatedAt: "2024-08-25T11:37:18.998Z",
+      createdAt: '2024-08-25T11:37:18.536Z',
+      updatedAt: '2024-08-25T11:37:18.998Z',
       number: 51058
     },
     {
       _id: '66cb2449119d45001b501f96',
       ingredients: [
-        "643d69a5c3f7b9001cfa093c",
-        "643d69a5c3f7b9001cfa0941",
-        "643d69a5c3f7b9001cfa0942"
+        '643d69a5c3f7b9001cfa093c',
+        '643d69a5c3f7b9001cfa0941',
+        '643d69a5c3f7b9001cfa0942'
       ],
       status: 'done',
       name: 'Краторный spicy био-марсианский бургер',
-      createdAt: "2024-08-25T12:32:09.731Z",
-      updatedAt: "2024-08-25T12:32:10.206Z",
+      createdAt: '2024-08-25T12:32:09.731Z',
+      updatedAt: '2024-08-25T12:32:10.206Z',
       number: 51061
     }
   ],
@@ -1663,13 +1675,13 @@ export const userData = {
 };
 &nbsp;
 export const userDataUpdated = {
-    isAuthChecked: true,
-    user: {
-      email: 'reginanikogosian@gmail.com',
-      name: 'Жак-Ив'
-    },
-    error: ''
-  };
+  isAuthChecked: true,
+  user: {
+    email: 'reginanikogosian@gmail.com',
+    name: 'Жак-Ив'
+  },
+  error: ''
+};
 &nbsp;
 export const userResponse = {
   success: true,
@@ -1680,12 +1692,12 @@ export const userResponse = {
 };
 &nbsp;
 export const userResponseUpdated = {
-    success: true,
-    user: {
-      email: 'reginanikogosian@gmail.com',
-      name: 'Жак-Ив'
-    }
-  };
+  success: true,
+  user: {
+    email: 'reginanikogosian@gmail.com',
+    name: 'Жак-Ив'
+  }
+};
 &nbsp;
 export const userRegisterData = {
   email: 'reginanikogosian@gmail.com',
@@ -1697,29 +1709,24 @@ export const userRegisterDataUpdated = {
   email: 'reginanikogosian12@gmail.com',
   name: 'Жак-Ив',
   password: '1234'
-};</pre></td></tr></table></pre>
+};
+&nbsp;</pre></td></tr></table></pre>
 
-      <div class="push"></div>
-      <!-- for sticky footer -->
-    </div>
-    <!-- /wrapper -->
-    <div class="footer quiet pad2 space-top1 center small">
-      Code coverage generated by
-      <a
-        href="https://istanbul.js.org/"
-        target="_blank"
-        rel="noopener noreferrer"
-        >istanbul</a
-      >
-      at 2024-08-25T13:56:04.436Z
-    </div>
-    <script src="../../prettify.js"></script>
-    <script>
-      window.onload = function () {
-        prettyPrint();
-      };
-    </script>
-    <script src="../../sorter.js"></script>
-    <script src="../../block-navigation.js"></script>
-  </body>
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2025-11-14T00:48:15.905Z
+            </div>
+        <script src="../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
+    </body>
 </html>
+    

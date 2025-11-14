@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for services/rootReducer.ts</title>
+    <title>Code coverage report for utils/ingredient-translation.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">services</a> rootReducer.ts</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">utils</a> ingredient-translation.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>17/17</span>
+                <span class='fraction'>26/26</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>17/17</span>
+                <span class='fraction'>26/26</span>
             </div>
         
             
@@ -80,7 +80,16 @@
 <a name='L15'></a><a href='#L15'>15</a>
 <a name='L16'></a><a href='#L16'>16</a>
 <a name='L17'></a><a href='#L17'>17</a>
-<a name='L18'></a><a href='#L18'>18</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -97,23 +106,41 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { combineReducers } from '@reduxjs/toolkit';
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export const INGREDIENT_NAME_EN: Record&lt;string, string&gt; = {
+  // BUNS
+  'Краторная булка N-200i': 'N-200i Crater Bun',
+  'Флюоресцентная булка R2-D3': 'R2-D3 Glow Bun',
+  'Булка с кристаллами': 'Crystal Bun',
 &nbsp;
-import { feedsSlice } from './slices/feeds';
-import { newOrderSlice } from './slices/newOrder';
-import { constructorSlice } from './slices/constructor';
-import { userSlice } from './slices/user';
-import { userOrdersSlice } from './slices/userOrders';
-import { ingredientsSlice } from './slices/ingredients';
+  // SAUCES
+  'Соус Spicy-X': 'Spicy-X Sauce',
+  'Соус традиционный галактический': 'Classic Galactic Sauce',
+  'Соус фирменный Space Sauce': 'Signature Space Sauce',
+  'Соус с шипами Антарианского плоскоходца': 'Antarian Flatwalker Spike Sauce',
 &nbsp;
-export const rootReducer = combineReducers({
-  [ingredientsSlice.name]: ingredientsSlice.reducer,
-  [constructorSlice.name]: constructorSlice.reducer,
-  [userSlice.name]: userSlice.reducer,
-  [feedsSlice.name]: feedsSlice.reducer,
-  [newOrderSlice.name]: newOrderSlice.reducer,
-  [userOrdersSlice.name]: userOrdersSlice.reducer
-});
+  // TOPPINGS
+  'Мясо бессмертных моллюсков Protostomia': 'Immortal Protostomia Clam Meat',
+  'Филе Люминесцентного тетраодонтимформа':
+    'Luminescent Tetraodontiform Fillet',
+  'Говядина с метеоритом': 'Meteor Beef',
+  'Кристаллы марсианских альфа-сахаридов': 'Mars Alpha-Glucosidase Crystals',
+  'Сыр с астероидной плесенью': 'Asteroid Mold Cheese',
+  'Плоды Фалленианского дерева': 'Fallenian Tree Fruit',
+  'Хрустящие минеральные кольца': 'Mineral Crunch Rings',
+  'Биокотлета из марсианской Магнолии': 'Mars Magnolia Bio-Patty',
+  'Мини-салат Экзо-Плантаго': 'Exo-Planetary Mini-Salad',
+  'Семена кунжута из космоса': 'Space Sesame Seeds',
+  'Говяжий метеорит (отбивная)': 'Meteor Beef Patty'
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
