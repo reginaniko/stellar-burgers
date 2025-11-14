@@ -73,6 +73,7 @@
     "jest": "^29.7.0",
     "jest-css-modules-transform": "^4.4.2",
     "jest-environment-jsdom": "^29.7.0",
+    "jest-junit": "^16.0.0",
     "jsdom": "^23.0.1",
     "prettier": "^3.1.1",
     "prettier-eslint": "^16.2.0",
@@ -97,7 +98,7 @@
     "lint:fix": "npm run lint -- --fix",
     "format": "prettier ./src --write",
     "cypress:open": "cypress open",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "eslintConfig": {
     "extends": [
