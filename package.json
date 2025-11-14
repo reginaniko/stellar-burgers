@@ -78,6 +78,7 @@
     "prettier-eslint": "^16.2.0",
     "prettier-eslint-cli": "^8.0.1",
     "react-test-renderer": "^18.2.0",
+    "shx": "^0.4.0",
     "storybook": "^7.6.10",
     "storybook-addon-react-router-v6": "^2.0.10",
     "style-loader": "^3.3.3",
@@ -89,6 +90,7 @@
   "scripts": {
     "start": "webpack serve --mode=development",
     "build": "webpack --mode production",
+    "postbuild": "shx cp dist/index.html dist/404.html",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src",

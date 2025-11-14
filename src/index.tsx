@@ -14,13 +14,16 @@ const IngredientsLoader = () => {
   return null;
 };
 
+const basename =
+  process.env.NODE_ENV === 'production' ? '/stellar-burgers' : '/';
+
 const container = document.getElementById('root') as HTMLElement;
 const root = ReactDOMClient.createRoot(container!);
 
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
+      <BrowserRouter basename={basename}>
         <IngredientsLoader />
         <App />
       </BrowserRouter>
