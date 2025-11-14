@@ -22,11 +22,11 @@ import {
   logout
 } from './user';
 
-describe('Тесты User', () => {
+describe('Tests: User', () => {
   const stateConstructor = (action: { type: string; payload?: {} }) =>
     userSlice.reducer(initialState, action);
 
-  test('Тесты селекторов isAuthCheckedSelector, getUser, getName, getError', () => {
+  test('Selectors tests: isAuthCheckedSelector, getUser, getName, getError', () => {
     const store = configureStore({
       reducer: {
         user: userSlice.reducer
@@ -45,7 +45,7 @@ describe('Тесты User', () => {
     expect(error).toEqual(userData.error);
   });
 
-  test('Тесты редьюсера register, проверка fulfilled', () => {
+  test('Reducer test: register, fulfilled check', () => {
     const action = {
       type: register.fulfilled.type,
       payload: userResponse
@@ -53,15 +53,15 @@ describe('Тесты User', () => {
     expect(stateConstructor(action)).toEqual(userData);
   });
 
-  test('Тесты редьюсера register, проверка rejected', () => {
+  test('Reducer test: register, rejected check', () => {
     const newState = userSlice.reducer(
       initialState,
-      register.rejected(new Error('error'), 'ошибка теста', userRegisterData)
+      register.rejected(new Error('error'), 'test error', userRegisterData)
     );
     expect(newState.error).toEqual('error');
   });
 
-  test('Тесты редьюсера register, проверка pending', () => {
+  test('Reducer test: register, pending check', () => {
     const newState = userSlice.reducer(
       initialState,
       register.pending('', userRegisterData)
@@ -70,7 +70,7 @@ describe('Тесты User', () => {
     expect(newState.error).toEqual('');
   });
 
-  test('Тесты редьюсера login, проверка fulfilled', () => {
+  test('Reducer test: login, fulfilled check', () => {
     const action = {
       type: login.fulfilled.type,
       payload: userResponse
@@ -78,16 +78,16 @@ describe('Тесты User', () => {
     expect(stateConstructor(action)).toEqual(userData);
   });
 
-  test('Тесты редьюсера login, проверка rejected', () => {
+  test('Reducer test: login, rejected check', () => {
     const newState = userSlice.reducer(
       initialState,
-      login.rejected(new Error('error'), 'ошибка теста', userRegisterData)
+      login.rejected(new Error('error'), 'test error', userRegisterData)
     );
     expect(newState.error).toEqual('error');
     expect(newState.isAuthChecked).toEqual(false);
   });
 
-  test('Тесты редьюсера login, проверка pending', () => {
+  test('Reducer test: login, pending check', () => {
     const newState = userSlice.reducer(
       initialState,
       login.pending('', userRegisterData)
@@ -96,7 +96,7 @@ describe('Тесты User', () => {
     expect(newState.error).toEqual('');
   });
 
-  test('Тесты редьюсера apiGetUser, проверка fulfilled', () => {
+  test('Reducer test: apiGetUser, fulfilled check', () => {
     const action = {
       type: apiGetUser.fulfilled.type,
       payload: userResponse
@@ -104,16 +104,16 @@ describe('Тесты User', () => {
     expect(stateConstructor(action)).toEqual(userData);
   });
 
-  test('Тесты редьюсера apiGetUser, проверка rejected', () => {
+  test('Reducer test: apiGetUser, rejected check', () => {
     const newState = userSlice.reducer(
       initialState,
-      apiGetUser.rejected(new Error('error'), 'ошибка теста')
+      apiGetUser.rejected(new Error('error'), 'test error')
     );
     expect(newState.error).toEqual('error');
     expect(newState.isAuthChecked).toEqual(false);
   });
 
-  test('Тесты редьюсера updateUser, проверка fulfilled', () => {
+  test('Reducer test: updateUser, fulfilled check', () => {
     const action = {
       type: updateUser.fulfilled.type,
       payload: userResponseUpdated
@@ -121,7 +121,7 @@ describe('Тесты User', () => {
     expect(stateConstructor(action)).toEqual(userDataUpdated);
   });
 
-  test('Тесты редьюсера updateUser, проверка rejected', () => {
+  test('Reducer test: updateUser, rejected check', () => {
     const newState = userSlice.reducer(
       initialState,
       updateUser.rejected(
@@ -134,7 +134,7 @@ describe('Тесты User', () => {
     expect(newState.isAuthChecked).toEqual(false);
   });
 
-  test('Тесты редьюсера updateUser, проверка pending', () => {
+  test('Reducer test: updateUser, pending check', () => {
     const newState = userSlice.reducer(
       initialState,
       updateUser.pending('', userRegisterDataUpdated)
@@ -143,7 +143,7 @@ describe('Тесты User', () => {
     expect(newState.error).toEqual('');
   });
 
-  test('Тесты редьюсера logout, проверка fulfilled', () => {
+  test('Reducer test: logout, fulfilled check', () => {
     const action = {
       type: logout.fulfilled.type,
       payload: userResponse
