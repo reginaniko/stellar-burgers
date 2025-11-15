@@ -26,10 +26,18 @@ jobs:
       - name: Install
         run: npm ci
 
+      - name: Run Jest tests (with HTML reporter)
+        run: npm test
+
       - name: Build
         run: npm run build
         env:
           BURGER_API_URL: ${{ secrets.BURGER_API_URL }}
+
+      - name: Copy Jest HTML report into dist/test-report/
+        run: |
+          mkdir -p dist/test-report
+          cp -R reports/html/* dist/test-report/
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
