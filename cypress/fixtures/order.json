@@ -1,11 +1,11 @@
 {
   "success": true,
-  "name": "Краторный spicy био-марсианский бургер",
+  "name": "Spicy Crater Bio-Martian Burger",
   "order": {
     "ingredients": [
       {
         "_id": "643d69a5c3f7b9001cfa093c",
-        "name": "Краторная булка N-200i",
+        "name": "N-200i Crater Bun",
         "type": "bun",
         "proteins": 80,
         "fat": 24,
@@ -19,7 +19,7 @@
       },
       {
         "_id": "643d69a5c3f7b9001cfa0941",
-        "name": "Биокотлета из марсианской Магнолии",
+        "name": "Mars Magnolia Bio-Patty",
         "type": "main",
         "proteins": 420,
         "fat": 142,
@@ -33,7 +33,7 @@
       },
       {
         "_id": "643d69a5c3f7b9001cfa0942",
-        "name": "Соус Spicy-X",
+        "name": "Spicy-X Sause",
         "type": "sauce",
         "proteins": 30,
         "fat": 20,
@@ -48,15 +48,15 @@
     ],
     "_id": "66cb2449119d45001b501f96",
     "owner": {
-      "name": "Жак-Ив Кусто",
+      "name": "Regina Tes",
       "email": "reginanikogosian@gmail.com",
-      "createdAt": "2024-08-06T08:56:28.285Z",
-      "updatedAt": "2024-08-24T17:35:31.891Z"
+      "createdAt": "2025-08-06T08:56:28.285Z",
+      "updatedAt": "2025-08-24T17:35:31.891Z"
     },
     "status": "done",
     "name": "Краторный spicy био-марсианский бургер",
-    "createdAt": "2024-08-25T12:32:09.731Z",
-    "updatedAt": "2024-08-25T12:32:10.206Z",
+    "createdAt": "2025-08-25T12:32:09.731Z",
+    "updatedAt": "2025-08-25T12:32:10.206Z",
     "number": 51061,
     "price": 1769
   }
