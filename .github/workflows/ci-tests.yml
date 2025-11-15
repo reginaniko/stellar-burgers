@@ -1,4 +1,4 @@
-name: CI Tests (Jest & Cypress)
+name: CI Tests
 
 on:
   push:
