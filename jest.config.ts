@@ -15,7 +15,15 @@ const config: Config = {
 
   reporters: [
     'default',
-    ['jest-junit', { outputDirectory: 'reports', outputName: 'junit.xml' }]
+    ['jest-junit', { outputDirectory: 'reports', outputName: 'junit.xml' }],
+    [
+      'jest-html-reporters',
+      {
+        publicPath: './reports/html',
+        filename: 'index.html',
+        expand: true
+      }
+    ]
   ]
 };
 
