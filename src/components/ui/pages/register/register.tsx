@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
+import { Input } from '../../Input';
 import {
-  Input,
   Button,
   PasswordInput
 } from '@zlden/react-developer-burger-ui-components';
