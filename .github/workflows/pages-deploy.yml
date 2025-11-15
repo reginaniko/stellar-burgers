@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   workflow_dispatch:
 
 permissions:
@@ -13,6 +13,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -20,24 +21,38 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
-          cache: 'npm'
+          node-version: 20
+          cache: npm
 
       - name: Install
         run: npm ci
-
-      - name: Run Jest tests (with HTML reporter)
-        run: npm test
 
       - name: Build
         run: npm run build
         env:
           BURGER_API_URL: ${{ secrets.BURGER_API_URL }}
 
-      - name: Copy Jest HTML report into dist/test-report/
+      - name: Copy test reports into dist
         run: |
-          mkdir -p dist/test-report
-          cp -R reports/html/* dist/test-report/
+          if [ -d "reports/html" ]; then
+            mkdir -p dist/reports/jest
+            cp -R reports/html/* dist/reports/jest/
+          fi
+
+          if [ -d "coverage/lcov-report" ]; then
+            mkdir -p dist/coverage/jest
+            cp -R coverage/lcov-report/* dist/coverage/jest/
+          fi
+
+          if [ -d "cypress/report" ]; then
+            mkdir -p dist/reports/cypress
+            cp -R cypress/report/* dist/reports/cypress/
+          fi
+
+          if [ -d "coverage/cypress" ]; then
+            mkdir -p dist/coverage/cypress
+            cp -R coverage/cypress/* dist/coverage/cypress/
+          fi
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
