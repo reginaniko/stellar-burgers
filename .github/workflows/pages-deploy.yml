@@ -44,9 +44,9 @@ jobs:
             cp -R coverage/lcov-report/* dist/coverage/jest/
           fi
 
-          if [ -d "cypress/report" ]; then
+          if [ -d "cypress/reports" ]; then
             mkdir -p dist/reports/cypress
-            cp -R cypress/report/* dist/reports/cypress/
+            cp -R cypress/reports/* dist/reports/cypress/
           fi
 
           if [ -d "coverage/cypress" ]; then
