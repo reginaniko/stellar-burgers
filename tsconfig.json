@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "es2017",
+    "lib": ["dom", "dom.iterable", "esnext", "ES2017"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -15,6 +15,7 @@
     "isolatedModules": true,
     "noEmit": false,
     "jsx": "react-jsx",
+    "typeRoots": ["./node_modules/@types", "./src/types"],
     "types": ["node", "jest"],
     "baseUrl": ".",
     "paths": {
@@ -28,5 +29,5 @@
       "@selectors": ["src/services/selectors"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "cypress"]
 }
