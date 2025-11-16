@@ -110,8 +110,8 @@
     "test:e2e:raw": "cypress run",
     "test:e2e:open": "cypress open",
     "test:e2e:reports:raw": "cypress run && nyc report --reporter=html",
-    "test:e2e": "start-server-and-test \"npm start\" http-get://localhost:4000 \"npm run test:e2e:raw\" -- --timeout 120000",
-    "test:e2e:reports": "start-server-and-test \"npm start\" http-get://localhost:4000 \"npm run test:e2e:reports:raw\" -- --timeout 120000",
+    "test:e2e": "start-server-and-test \"npm start\" http-get://localhost:4000 \"npm run test:e2e:raw\" --timeout 120000",
+    "test:e2e:reports": "start-server-and-test \"npm start\" http-get://localhost:4000 \"npm run test:e2e:reports:raw\" --timeout 120000",
     "test:all": "npm run test:unit && npm run test:e2e:reports"
   },
   "eslintConfig": {
