@@ -74,3 +74,4 @@ jobs:
         with:
           name: cypress-coverage-html
           path: coverage/
+          if-no-files-found: ignore
