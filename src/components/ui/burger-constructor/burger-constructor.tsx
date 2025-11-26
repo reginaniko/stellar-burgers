@@ -22,6 +22,7 @@ export const BurgerConstructorUI: FC<BurgerConstructorUIProps> = ({
     {constructorItems.bun ? (
       <div className={`${styles.element} mb-4 mr-4`}>
         <ConstructorElement
+          data-testid='constructor-bun-top'
           type='top'
           isLocked
           text={`${constructorItems.bun.name} (top)`}
@@ -36,7 +37,7 @@ export const BurgerConstructorUI: FC<BurgerConstructorUIProps> = ({
         Choose buns
       </div>
     )}
-    <ul className={styles.elements}>
+    <ul className={styles.elements} data-testid='constructor-ingredients'>
       {constructorItems.ingredients.length > 0 ? (
         constructorItems.ingredients.map(
           (item: TConstructorIngredient, index: number) => (
@@ -59,6 +60,7 @@ export const BurgerConstructorUI: FC<BurgerConstructorUIProps> = ({
     {constructorItems.bun ? (
       <div className={`${styles.element} mt-4 mr-4`}>
         <ConstructorElement
+          data-testid='constructor-bun-bottom'
           type='bottom'
           isLocked
           text={`${constructorItems.bun.name} (bottom)`}
@@ -84,6 +86,7 @@ export const BurgerConstructorUI: FC<BurgerConstructorUIProps> = ({
         size='large'
         children='Place Order'
         onClick={onOrderClick}
+        data-testid='place-order-btn'
       />
     </div>
 
