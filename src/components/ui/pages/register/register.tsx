@@ -1,12 +1,14 @@
 import { FC, useState } from 'react';
 import {
-  Input,
+  Input as RawInput,
   Button,
   PasswordInput
 } from '@zlden/react-developer-burger-ui-components';
 import styles from '../common.module.css';
 import { Link } from 'react-router-dom';
 import { RegisterUIProps } from './type';
+
+const Input = RawInput as any;
 
 export const RegisterUI: FC<RegisterUIProps> = ({
   errorText,
@@ -31,11 +33,14 @@ export const RegisterUI: FC<RegisterUIProps> = ({
             <Input
               type='text'
               placeholder='Name'
-              onChange={(e) => setUserName(e.target.value)}
+              data-testid='register-name'
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setUserName(e.target.value)
+              }
               value={userName}
               name='name'
               error={false}
-              errorText=''
+              errorText='Wrong Name'
               size='default'
             />
           </div>
@@ -43,24 +48,34 @@ export const RegisterUI: FC<RegisterUIProps> = ({
             <Input
               type='email'
               placeholder='Email'
-              onChange={(e) => setEmail(e.target.value)}
+              data-testid='register-email'
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setEmail(e.target.value)
+              }
               value={email}
               name={'email'}
               error={false}
-              errorText=''
+              errorText='Wrong Email'
               size={'default'}
             />
           </div>
           <div className='pb-6'>
             <PasswordInput
               placeholder='Password'
+              data-testid='register-password'
               onChange={(e) => setPassword(e.target.value)}
               value={password}
               name='password'
+              errorText='Wrong Password'
             />
           </div>
           <div className={`pb-6 ${styles.button}`}>
-            <Button type='primary' size='medium' htmlType='submit'>
+            <Button
+              type='primary'
+              size='medium'
+              htmlType='submit'
+              data-testid='register-submit'
+            >
               Create Account
             </Button>
           </div>
@@ -73,7 +88,11 @@ export const RegisterUI: FC<RegisterUIProps> = ({
       </form>
       <div className={`${styles.question} text text_type_main-default pb-6`}>
         Already have an account?
-        <Link to='/login' className={`pl-2 ${styles.link}`}>
+        <Link
+          to='/login'
+          className={`pl-2 ${styles.link}`}
+          data-testid='register-login'
+        >
           Log In
         </Link>
       </div>
