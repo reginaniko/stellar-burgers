@@ -3,7 +3,7 @@ describe('E2E: main page and ingredient modal', function () {
   beforeEach(() => {
     cy.intercept('GET', '/api/ingredients', { fixture: 'ingredients.json' });
     cy.intercept('GET', '/api/auth/user', { fixture: 'user.json' });
-    cy.visit('');
+    cy.visit('/');
   });
 
   afterEach(() => {
@@ -65,7 +65,7 @@ describe('E2E: order creation flow', function () {
     cy.intercept('POST', '/api/auth/login', { fixture: 'user.json' });
     cy.intercept('GET', '/api/auth/user', { fixture: 'user.json' });
     cy.intercept('POST', '/api/orders', { fixture: 'order.json' });
-    cy.visit('');
+    cy.visit('/');
     cy.setCookie('accessToken', 'accessToken');
     window.localStorage.setItem('refreshToken', 'refreshToken');
   });
