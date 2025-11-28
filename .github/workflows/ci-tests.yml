@@ -48,8 +48,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: jest
 
-    env:
-      CYPRESS_BASE_URL: http://127.0.0.1:4173
+    # env:
+    #   CYPRESS_BASE_URL: http://127.0.0.1:4173
 
     steps:
       - name: Checkout repository
@@ -64,29 +64,38 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build app for tests
-        run: npm run build
-        env:
-          BURGER_API_URL: ${{ secrets.BURGER_API_URL }}
+      # - name: Build app for tests
+      #   run: npm run build
+      #   env:
+      #     BURGER_API_URL: ${{ secrets.BURGER_API_URL }}
 
-      - name: Start static server
-        run: npx serve -s dist -l 4173 &
+      - name: Start dev server
+        run: npm run start &
 
-      - name: Wait for app to be ready
-        run: npx wait-on http://127.0.0.1:4173
+      # - name: Start static server
+      #   run: npx serve -s dist -l 4173 &
 
-      - name: Run Cypress E2E tests and generate HTML report & coverage
-        run: npm run test:e2e:reports
+      # - name: Wait for app to be ready
+      #   run: npx wait-on http://127.0.0.1:4000
 
-      - name: Upload Cypress HTML report
-        uses: actions/upload-artifact@v4
-        with:
-          name: cypress-html-report
-          path: cypress/reports/
+      - name: Wait for dev server
+        run: npx wait-on http://127.0.0.1:4000
+
+      - name: Run Cypress E2E tests
+        run: npm run cypress:run
+
+      # - name: Run Cypress E2E tests and generate HTML report & coverage
+      #   run: npm run test:e2e:reports
+
+      # - name: Upload Cypress HTML report
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: cypress-html-report
+      #     path: cypress/reports/
       
-      - name: Upload Cypress coverage report
-        uses: actions/upload-artifact@v4
-        with:
-          name: cypress-coverage-html
-          path: coverage/
-          if-no-files-found: ignore
+      # - name: Upload Cypress coverage report
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: cypress-coverage-html
+      #     path: coverage/
+      #     if-no-files-found: ignore
