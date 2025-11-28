@@ -1,12 +1,15 @@
 import { FC, useState } from 'react';
 import { Input } from '../../Input';
 import {
+  Input as RawInput,
   Button,
   PasswordInput
 } from '@zlden/react-developer-burger-ui-components';
 import styles from '../common.module.css';
 import { Link } from 'react-router-dom';
 import { LoginUIProps } from './type';
+
+const Input = RawInput as any;
 
 export const LoginUI: FC<LoginUIProps> = ({
   email,
@@ -29,24 +32,34 @@ export const LoginUI: FC<LoginUIProps> = ({
             <Input
               type='email'
               placeholder='Email'
-              onChange={(e) => setEmail(e.target.value)}
+              data-testid='login-email'
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setEmail(e.target.value)
+              }
               value={email}
               name='email'
               error={false}
-              errorText=''
+              errorText='Wrong Email'
               size='default'
             />
           </div>
           <div className='pb-6'>
             <PasswordInput
               placeholder='Password'
+              data-testid='login-password'
               onChange={(e) => setPassword(e.target.value)}
               value={password}
+              errorText='Wrong Password'
               name='password'
             />
           </div>
           <div className={`pb-6 ${styles.button}`}>
-            <Button type='primary' size='medium' htmlType='submit'>
+            <Button
+              type='primary'
+              size='medium'
+              htmlType='submit'
+              data-testid='login-submit'
+            >
               Log In
             </Button>
           </div>
@@ -59,13 +72,21 @@ export const LoginUI: FC<LoginUIProps> = ({
       </form>
       <div className={`pb-4 ${styles.question} text text_type_main-default`}>
         New user?
-        <Link to='/register' className={`pl-2 ${styles.link}`}>
+        <Link
+          to='/register'
+          className={`pl-2 ${styles.link}`}
+          data-testid='signup-link'
+        >
           Sign Up
         </Link>
       </div>
       <div className={`${styles.question} text text_type_main-default pb-6`}>
         Forgot Password?
-        <Link to={'/forgot-password'} className={`pl-2 ${styles.link}`}>
+        <Link
+          to={'/forgot-password'}
+          className={`pl-2 ${styles.link}`}
+          data-testid='forgot-link'
+        >
           Reset Password
         </Link>
       </div>

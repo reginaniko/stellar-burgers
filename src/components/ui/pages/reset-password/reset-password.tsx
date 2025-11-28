@@ -1,12 +1,15 @@
 import { FC } from 'react';
 import { Input } from '../../Input';
 import {
+  Input as RawInput,
   Button,
   PasswordInput
 } from '@zlden/react-developer-burger-ui-components';
 import styles from '../common.module.css';
 import { Link } from 'react-router-dom';
 import { ResetPasswordUIProps } from './type';
+
+const Input = RawInput as any;
 
 export const ResetPasswordUI: FC<ResetPasswordUIProps> = ({
   errorText,
@@ -36,7 +39,9 @@ export const ResetPasswordUI: FC<ResetPasswordUIProps> = ({
           <Input
             type='text'
             placeholder='Enter the code from the email'
-            onChange={(e) => setToken(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setToken(e.target.value)
+            }
             value={token}
             name='token'
             error={false}

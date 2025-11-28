@@ -1,12 +1,15 @@
 import { FC } from 'react';
 
-import { Input } from '../../Input';
-import { Button } from '@zlden/react-developer-burger-ui-components';
+import {
+  Button,
+  Input as RawInput
+} from '@zlden/react-developer-burger-ui-components';
 import styles from './profile.module.css';
 import commonStyles from '../common.module.css';
-
 import { ProfileUIProps } from './type';
 import { ProfileMenu } from '@components';
+
+const Input = RawInput as any;
 
 export const ProfileUI: FC<ProfileUIProps> = ({
   formValue,
@@ -27,26 +30,27 @@ export const ProfileUI: FC<ProfileUIProps> = ({
       <>
         <div className='pb-6'>
           <Input
-            type={'text'}
-            placeholder={'Name'}
+            type='text'
+            placeholder='Name'
             onChange={handleInputChange}
             value={formValue.name}
-            name={'name'}
+            name='name'
             error={false}
-            errorText={''}
-            size={'default'}
-            icon={'EditIcon'}
+            errorText='Wrong Name'
+            size='default'
+            icon='EditIcon'
           />
         </div>
         <div className='pb-6'>
           <Input
             type={'email'}
             placeholder={'Email'}
+            data-testid='user-email'
             onChange={handleInputChange}
             value={formValue.email}
             name={'email'}
             error={false}
-            errorText={''}
+            errorText={'Wrong Email'}
             size={'default'}
             icon={'EditIcon'}
           />
@@ -59,7 +63,7 @@ export const ProfileUI: FC<ProfileUIProps> = ({
             value={formValue.password}
             name={'password'}
             error={false}
-            errorText={''}
+            errorText={'Wrong Password'}
             size={'default'}
             icon={'EditIcon'}
           />
