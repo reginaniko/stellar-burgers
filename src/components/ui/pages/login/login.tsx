@@ -1,5 +1,4 @@
 import { FC, useState } from 'react';
-import { Input } from '../../Input';
 import {
   Input as RawInput,
   Button,
