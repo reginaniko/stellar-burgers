@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { Input } from '../../Input';
 import {
   Input as RawInput,
   Button,
