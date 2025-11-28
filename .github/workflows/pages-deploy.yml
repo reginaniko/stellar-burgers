@@ -31,6 +31,7 @@ jobs:
         run: npm run build
         env:
           BURGER_API_URL: ${{ secrets.BURGER_API_URL }}
+          PUBLIC_PATH: /stellar-burgers/
 
       - name: Copy test reports into dist
         run: |
